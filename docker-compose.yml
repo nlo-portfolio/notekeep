@@ -1,0 +1,8 @@
+version: '3.0'
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    entrypoint: ["./test/node_modules/mocha/bin/mocha", "--timeout", "30000", "--retries", "3"]
